@@ -17,12 +17,12 @@
         </li>
       <% end %>
     </ul>
-    <form id="search-form" class="form-inline my-2 my-lg-0 mr-auto">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+    <%= form_tag reviews_path, id: 'search-form', class: 'form-inline my-2 my-lg-0 mr-auto', method: :get do %>
+      <%= text_field_tag :search, params[:search], placeholder: 'Search', class: 'form-control mr-sm-2' %>
+      <%= button_tag nil, class:'btn btn-outline-success my-2 my-sm-0' do %>
         <i class="fa fa-search" aria-hidden="true"></i>
-      </button>
-    </form>
+      <% end %>
+    <% end %>
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
