@@ -4,6 +4,4 @@ class MypagesController < ApplicationController
         @follower_users=current_user.followers
         @reviews = current_user.reviews
     end
-    
-
 end
